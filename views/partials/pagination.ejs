@@ -1,0 +1,14 @@
+<div class="pagination">
+        <span class="current-page">Page <%= pagination.currentPage %> of <%= pagination.lastPage%></span>
+        <% if(!(pagination.currentPage == pagination.firstPage)){%>
+        <a href="?page=<%= Number(pagination.currentPage) - 1 %>">
+            <span class="next-page"><i class="ion-arrow-left-b"> Previous </i></span>
+        </a>
+        <% } %>
+       
+        <% if(!(pagination.currentPage == pagination.lastPage)) {%> 
+        <a href="?page=<%= Number(pagination.currentPage) + 1%>">
+            <span class="previous-page">Next <i class="ion-arrow-right-b"></i></span>
+        </a>
+        <% } %>
+    </div>

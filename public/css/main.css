@@ -1,0 +1,432 @@
+@font-face {
+    font-family: "Doki Doki";
+    src: url("/assets/ddlc-font.woff");
+}
+
+body {
+    margin: 0;
+    font-family: 'Patrick Hand';
+    font-size: 18px;
+    color: #25131d;
+}
+
+a {
+    text-decoration: none;
+}
+
+.heading-outlined {
+    color: #FAE9F4;
+    letter-spacing: 2px;
+    text-shadow:
+    -2px -2px .01px #b26a9c,
+    2px -2px .01px #b26a9c,
+    -2px 2px .01px #b26a9c,
+    2px 2px .01px #b26a9c; 
+}
+
+.button-outlined {
+    color: #FAE9F4;
+    letter-spacing: 2px;
+    text-shadow:
+    -2px -2px .01px #b26a9c,
+    2px -2px .01px #b26a9c,
+    -2px 2px .01px #b26a9c,
+    2px 2px .01px #b26a9c; 
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    font-family: "Patrick Hand";
+}
+
+.button-pink {
+    color: #25131d;
+    background: #FAE9F4;
+    background: #eec7e1;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 1px solid #ecd3de;
+    font-family: "Patrick Hand";
+    font-size: 16px;
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    border-bottom: 3px solid #EEC7E1;
+    padding: 0% 3%;
+    max-height: 5%;
+    background: #fceaf5;
+    z-index: 10;
+}
+
+#site-title {
+    font-family: "Doki Doki";
+    letter-spacing: 2px;
+    font-size: 26px;
+    color: #f58988;
+    text-shadow: 1px 1px #bb6767
+}
+
+#site-title .purple {
+    color: #a7869d;
+    text-shadow: 1px 1px #8f7386;
+}
+
+#site-title .blue {
+    color: #86d8f3;
+    text-shadow: 1px 1px #69acc0
+}
+
+#site-title .green {
+    color: #c1f1ad;
+    text-shadow: 1px 1px #a0c98f;
+}
+
+#site-title img {
+    vertical-align: middle;
+    transform: scale(1.6);
+    margin: 0px 20px;
+}
+
+nav #new-poem-btn {
+    display: inline-block;
+}
+
+nav #user {
+    display: inline-block;
+    margin: 0px 10px;
+}
+
+#homepage-body {
+    height: 100%;
+}
+
+#homepage-body .content {
+    width: 74%;
+    padding: 2%;
+}
+
+#homepage-body aside {
+    height: 100%;
+    padding: 2%;
+    width: 18%;
+    flex: 1;
+    background: #fbeaf5;
+    border-left: 15px solid #EEC7E1;
+    position: fixed;
+    right: 0;
+    top: 10.5%;
+    border-top-left-radius: 120px;
+    border-bottom-left-radius: 260px;
+}
+
+
+/* LOGIN SIGNUP PAGE STYLES */
+#login-signup {
+    background-color: #FAE9F4;
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/853855340251277329/716CE37165F73F8AAB8EBF204681D0FFAE2549BC/");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: 500px;
+}
+
+#login-signup h1 {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: "Doki Doki";
+    letter-spacing: 2px;
+    color: #f58988;
+    text-shadow: 1px 1px #bb6767
+}
+
+#login-signup h1 .purple {
+    color: #a7869d;
+    text-shadow: 1px 1px #8f7386;
+}
+
+#login-signup h1 .blue {
+    color: #86d8f3;
+    text-shadow: 1px 1px #69acc0
+}
+
+#login-signup h1 .green {
+    color: #c1f1ad;
+    text-shadow: 1px 1px #a0c98f;
+}
+
+#login-signup h1 img {
+    vertical-align: middle;
+    margin: 0px 10px;
+}
+
+#login-signup form {
+    background: #FAE9F4;
+    box-shadow: inset 0px 0px 3px 3px #EEC7E1;
+    border: 1px solid #EEC7E1;
+    padding: 2%;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.form-field {
+    margin: 15px 0px;
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+}
+
+#login-signup form input {
+    background: transparent;
+    border: none;
+    width: 60%;
+    border-bottom: 3px solid #EEC7E1;
+}
+
+#login-form {
+    display: none;
+}
+
+#swap-form {
+    padding: 2%;
+    width: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+#error {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2%;
+    background: #FAE9F4;
+    box-shadow: inset 0px 0px 3px 3px #EEC7E1;
+    border: 1px solid #EEC7E1;
+    font-size: 18px;
+    min-width: 250px;
+}
+
+#error button {
+    font-size: 22px;
+}
+
+
+
+
+/* FORUM HOMEPAGE STYLES */
+#homepage-body .content {
+    background: url("/assets/dot-bg.png");
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.poem {
+    background:  url("/assets/paper.jpg");
+    background-size: cover;
+    padding: 2%;
+    border: 1px solid #FAE9F4;
+    margin: 2% 0%;
+}
+
+.poem h2 {
+    font-weight: normal;
+}
+
+.pagination {
+
+}
+
+.pagination .next-page, .pagination .previous-page {
+    margin: 0px 5px;
+    color: #b26a9c;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+/* NEW POEM PAGE STYLES */
+
+#new-poem {
+    background: url("/assets/desk-wood.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+
+#new-poem #notepad {
+    height: 100%;
+    width: 946px;
+    position: fixed;
+    background-image: url("/assets/notepad.png");
+    background-repeat: no-repeat;
+}
+
+#notepad form {
+    /* border: 5px solid tomato; */
+    margin-left: 46.5%;
+    margin-top: 6%;
+}
+
+#notepad input, #notepad textarea {
+    background: transparent;
+    border: none;
+    font-family: "Patrick Hand";
+    font-size: 26px;
+    width: 80%;
+}
+
+#notepad textarea {
+    height: 70vh;
+    margin-top: 2%;
+    font-size: 22px;
+    line-height: 2;
+}
+
+#notepad button {
+    color: #25131d;
+    background: #FAE9F4;
+    background: #eec7e1;
+    font-weight: 600;
+    padding: 8px 20px;
+    border: 1px solid #ecd3de;
+}
+
+
+
+/* POEM PAGE STYLES */
+.poem-page {
+    padding: 5% 0px;
+    background: #ecd3de;
+}
+
+.poem-page #poem {
+    background: url("/assets/paper.jpg");
+    background-size: cover;
+    width: 60%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 2%;
+    border: 1px solid #EEC7E1;
+}
+
+#poem {
+    min-height: 80vh;
+}
+
+.poem-author{
+    text-align: right;
+}
+
+.poem-title {
+    font-weight: normal;
+}
+
+.poem-body {
+    font-family: Indie Flower;
+    font-size: 20px;
+    white-space: pre-line;
+}
+
+#poem time {
+    color: #3f3f3f;
+    font-weight: 300;
+    text-align: right;
+    display: block;
+}
+
+#poem .meta {
+    color: #3f3f3f;
+    font-size: 16px;
+}
+
+#poem .dislikes, #poem .likes {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+#poem .likes i {
+    color: #b26a9c;
+}
+
+.like-btn, .dislike-btn {
+    cursor: pointer;
+}
+
+#poem i {
+    font-size: 32px;
+}
+
+#comments {
+    width: 60%;
+    max-width: 760px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+#comments h2 {
+    margin-bottom: 60px;
+}
+
+.comment {
+    border-radius: 5px;
+    position: relative;
+    padding: 4% 2%;
+    max-height: 200px;
+    border: 2px solid white;
+    box-shadow: 0px 0px 3px 1px lightgray;
+}
+
+.comment .transparent-bg {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url("/assets/dot-bg.png");
+    background-size: contain;
+    opacity: .8;
+    z-index: 0;
+}
+
+.comment .transparent-pink {
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: #eb89a8;
+    opacity: .6;
+    z-index: 1;
+}
+
+.comment-author {
+    font-size: 20px;
+    position: absolute;
+    padding: 5px 10px;
+    top: -39px;
+    left: 20px;
+    background: snow;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: 0px 0px 3px 1px lightgray;
+}
+
+.comment-body {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow:
+    -1px -1px 0px #2f2f2f,
+    1px -1px 0px #2f2f2f,
+    -1px 1px 0px #2f2f2f,
+    1px 1px 0px #2f2f2f;
+    font-size: 20px;
+}

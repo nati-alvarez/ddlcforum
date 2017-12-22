@@ -1,0 +1,31 @@
+<% include partials/header %>
+<!-- vars for date/time posted -->
+<% var timePosted = new Date(poem.datePosted).toLocaleString([], {hour: '2-digit', minute:'2-digit'}) %>
+<% var datePosted = new Date(poem.datePosted).toLocaleDateString() %>
+<body class="poem-page">
+    <section id="poem">
+        <div class="poem-author"><%= poem.username %></div>
+        <time><%= timePosted %> <%= datePosted %></time>
+        <h1 class="poem-title"><%= poem.title %></h1>
+        <p class="poem-body"><%- poem.body %></p>
+        <div class="meta">
+            <div class="likes">
+                <i class="like-btn ion-ios-pulse-strong"></i> &nbsp; Doki Dokis: <span id="likes-counter"><%= poem.likes %></span>
+            </div>
+            <div class="dislikes">
+                <img class="dislike-btn" width="35" height="35" src="/assets/delete.jpg"/> &nbsp; DELET THIS: <span id="dislikes-counter"><%= poem.dislikes%></span>
+            </div>
+        </div>
+    </section>
+    <section id="comments">
+        <h2 class="heading-outlined">Comments</h2>
+        <div class="comment">
+            <div class="comment-author heading-outlined">Just Monkia</div>
+            <div class="transparent-bg"></div>
+            <div class="transparent-pink"></div>
+            <div class="comment-body">
+                Hey, that's pretty good.
+            </div>
+        </div>
+    </section>
+</body>

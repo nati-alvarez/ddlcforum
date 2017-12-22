@@ -1,0 +1,29 @@
+<% include partials/header %>
+<% include partials/nav %>
+<main id="homepage-body">
+    <section class="content">
+        <header>
+            <h1 class="heading-outlined">About</h1>
+            <p>This is a little something that I was inspired to make after playing Doki Doki Literature Club.
+            It's pretty much just your average forum for sharing poetry, but with more Monika (jk fuck that hoe).
+            </p>
+        </header>
+        <section id="poems">
+            <h2 class="heading-outlined">New Poems</h2>
+            <div class="pagination">
+                <span class="current-page">Page <%= pagination.currentPage %></span>
+            </div>
+            <% newPoems.forEach(poem=>{%>
+                <div class="poem">
+                    <h2><%= poem.title %></h2>
+                    <p>Written By: <%= poem.username %></p>
+                    <a class="button-pink" href="/poem/<%=poem.id%>">Read</a>
+                </div> 
+            <% }) %>
+        </section>
+        <% include partials/pagination %>
+    </section>
+    <aside>
+        <h4>Categories</h4>
+    </aside>
+</main>

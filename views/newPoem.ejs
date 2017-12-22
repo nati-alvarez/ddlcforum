@@ -1,0 +1,12 @@
+<% include partials/header %>
+<body id="new-poem">
+    <div id="notepad" src="/assets/notepad.png">
+        <form onsubmit="return newPoem(event)"action="/poem/new" method="POST">
+            <input name="title" placeholder="Name your poem"/>
+            <textarea name="body" placeholder='“A poem begins as a lump in the throat, a sense of wrong, a homesickness, a lovesickness.” 
+― Robert Frost'></textarea>
+            <button>Submit Poem</button>
+        </form>
+    </div>
+</body>
+<script src="/js/newPoem.js"></script>
