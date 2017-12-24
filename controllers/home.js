@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "san12nas",
-    database: "poet_forum"
+    host: process.env.HOST || "localhost",
+    user: process.env.USER || "root",
+    password: process.env.PASSWORD || "",
+    database: process.env.DB || "ddlcforum"
 });
 
 exports.index = function(req, res){
@@ -25,7 +25,7 @@ exports.index = function(req, res){
 
 exports.forum = function(req, res){
     if(!req.session.isLoggedIn) res.redirect("/");
-    db.query("SELECT poems.*, poets.username FROM poems INNER JOIN poets ON poems.authorId = poets.id", (err, result)=>{
+    db.query("SELECT poems.*, poets.username FROM poems INNER JOIN poets ON poems.authorId = poets.id ORDER BY datePosted DESC", (err, result)=>{
         var poems;
         var lastPage = Math.ceil(result.length / 5);
         var currentPage = req.query.page || 1

@@ -5,7 +5,7 @@
         <span class="green">P</span><span class="purple">o</span>e<span class="blue">t</span><span class="purple">r</span>y F<span class="blue">o</span>r<span class="purple">u</span><span class="green">m</span></h1>
     </h1>
     <form onsubmit="return validateSignup(event);" action="/signup" method="POST" id="signup-form">
-        <h3>Signup</h3>
+        <h3>Create an Account</h3>
         <div class="form-field">
             Enter a username: <input type="text" name="username"/>
         </div>
@@ -19,7 +19,7 @@
     </form>
 
     <form onsubmit="return validateLogin(event);" action="/login" method="POST" id="login-form">
-        <h3>Login</h3>
+        <h3>Login to Your Account</h3>
         <div class="form-field">
             Enter a username: <input type="text" name="username"/>
         </div>
@@ -29,7 +29,7 @@
         <button class="button-outlined">Login</button>
     </form>
 
-    <p id="swap-form">Have an account? <span style="color: #b26a9c;">Login!</span></p>
+    <p id="swap-form">Have an account? <span style="color: #b26a9c;">Log in!</span></p>
 
     <% if(locals.err) { %>
         <div id="error">

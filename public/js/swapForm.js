@@ -8,12 +8,13 @@ loginForm.style.display = "none";
 swapFormBtn.addEventListener("click", swapForms);
 
 function swapForms(){
-    console.log("doing it");
     if(loginForm.style.display == "none"){
         loginForm.style.display = "block";
         signupForm.style.display = "none";
+        swapFormBtn.innerHTML = "Don't have an account? <span style='color: #b26a9c;'>Sign Up!</span>";
     }else {
         loginForm.style.display = "none";
         signupForm.style.display = "block";
+        swapFormBtn.innerHTML = "Have an account? <span style='color: #b26a9c;'>Log In!</span>";
     }
 }

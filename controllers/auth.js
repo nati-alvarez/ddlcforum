@@ -1,9 +1,9 @@
 const mysql = require("mysql");
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "san12nas",
-    database: "poet_forum"
+    host: process.env.HOST || "localhost",
+    user: process.env.USER || "root",
+    password: process.env.PASSWORD || "",
+    database: process.env.DB || "ddlcforum"
 });
 const bcrypt = require("bcrypt");
   
@@ -11,10 +11,11 @@ exports.signup = function(req, res){
     var password = bcrypt.hashSync(req.body.password, 10);
     db.query(`INSERT INTO poets (username, password) VALUES ('${req.body.username}', '${password}')`, (err, result)=>{
         if(err){
+            console.log(err);
             if(err.sqlState === "23000") res.redirect("/?err=2");
             return;
         }
-        req.session.user = {username: req.body.username, id: result[0].id};
+        req.session.user = {username: req.body.username, id: result.insertId};
         req.session.isLoggedIn = true;
         res.redirect("/forum");
     });

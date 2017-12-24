@@ -1,7 +1,7 @@
 <% include partials/header %>
 <!-- vars for date/time posted -->
 <% var timePosted = new Date(poem.datePosted).toLocaleString([], {hour: '2-digit', minute:'2-digit'}) %>
-<% var datePosted = new Date(poem.datePosted).toLocaleDateString() %>
+<% var datePosted = new Date(poem.datePosted).toLocaleDateString().replace(/[-]/g, "/") %>
 <body class="poem-page">
     <section id="poem">
         <div class="poem-author"><%= poem.username %></div>
@@ -10,13 +10,18 @@
         <p class="poem-body"><%- poem.body %></p>
         <div class="meta">
             <div class="likes">
-                <i class="like-btn ion-ios-pulse-strong"></i> &nbsp; Doki Dokis: <span id="likes-counter"><%= poem.likes %></span>
+                <i onclick="likePoem(<%= poem.id %>)" class="like-btn ion-ios-pulse-strong"></i> &nbsp; Doki Dokis: <span id="likes-counter"><%= poem.likes %></span>
             </div>
-            <div class="dislikes">
-                <img class="dislike-btn" width="35" height="35" src="/assets/delete.jpg"/> &nbsp; DELET THIS: <span id="dislikes-counter"><%= poem.dislikes%></span>
+            <div class="dislikes"> 
+                <img onclick="dislikePoem(<%= poem.id %>)" class="dislike-btn" width="35" height="35" src="/assets/delete.jpg"/> &nbsp; DELET THIS: <span id="dislikes-counter"><%= poem.dislikes%></span>
             </div>
         </div>
     </section>
+    <form onsubmit="return newComment(event);"  id="new-comment">
+        <h2 class="heading-outlined">Write a comment!</h2>                
+        <textarea type="text" placeholder="write your comment" name="body"></textarea>
+        <button data-id="<%= poem.id %>" type="submit" class="button-pink"/>Submit</button>
+    </form>
     <section id="comments">
         <h2 class="heading-outlined">Comments</h2>
         <div class="comment">
@@ -27,5 +32,17 @@
                 Hey, that's pretty good.
             </div>
         </div>
+        <% comments.forEach(comment=>{%>
+            <div class="comment" id=`comment-<%= comment.id %>`>
+                <div class="comment-author heading-outlined"><%= comment.author %></div>
+                <div class="transparent-bg"></div>
+                <div class="transparent-pink"></div>
+                <div class="comment-body">
+                    <%= comment.body %>
+                </div>
+            </div>
+        <% }) %>
     </section>
 </body>
+<script src="/js/newComment.js"></script>
+<script src="/js/poemFeedback.js"></script>
